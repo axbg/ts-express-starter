@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  db:
+    image: mysql
+    container_name: mysql
+    hostname: db
+    ports: 
+        - "3306:3306"
+    networks:
+      - app-network
+
+  template:
+    build: .
+    container_name: template
+    ports:
+      - "8080:8080"
+    env_file:
+      - ".env"
+    hostname: template
+    restart: always
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+networks:
+  app-network:
+    driver: bridge
