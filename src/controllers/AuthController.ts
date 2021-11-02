@@ -2,7 +2,9 @@ import { Controller, Get, Req, Res, Session, UseBefore } from 'routing-controlle
 import { Request, Response } from 'express';
 import AuthenticationRedirectMiddleware from '../middlewares/AuthenticationRedirectMiddleware';
 import { AuthenticationMiddleware } from '../middlewares/AuthenticationMiddleware';
+import { Service } from 'typedi';
 
+@Service()
 @Controller('/authentication')
 export class AuthController {
 

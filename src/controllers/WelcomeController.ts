@@ -4,6 +4,9 @@ import { OpenAPI } from 'routing-controllers-openapi';
 import { Body, CurrentUser, Get, Header, JsonController, Post, UseBefore } from 'routing-controllers';
 
 import AuthenticatedMiddleware from '../middlewares/AuthenticatedMiddleware';
+import { Service } from 'typedi';
+
+@Service()
 @JsonController()
 export class WelcomeController {
     @Get('/')
