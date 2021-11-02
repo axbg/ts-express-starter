@@ -181,7 +181,8 @@ module.exports = {
         ],
         "use-isnan": "error",
         "valid-typeof": "off"
-    }, 
+    },
+    "ignorePatterns": ["src/models/migrations"],
     "overrides": [
         {
             "files": ["*Controller.ts"],
